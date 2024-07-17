@@ -5,8 +5,9 @@ import "./Citydata.css";
 const Citydata = ({ cidade }) => {
   const [location, setLocation] = useState(null);
   const [error, setError] = useState(null);
-  const apiKey = "RMOFiWgBOMvRcjK6GEdkryGc3VCIA1ga";
+  const apiKey = process.env.REACT_APP_CHAVE_DA_API;
 
+  
   useEffect(() => {
     const getLocation = (location) => {
       // const url = `/locations/v1/cities/search?apikey=${apiKey}&q=${city}`;
