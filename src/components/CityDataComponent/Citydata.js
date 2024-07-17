@@ -4,9 +4,9 @@ import "./Citydata.css";
 
 const Citydata = ({ cidade }) => {
   const [location, setLocation] = useState(null);
+  const [locationKey, setLocationKey] = useState('');
   const [error, setError] = useState(null);
   const apiKey = process.env.REACT_APP_CHAVE_DA_API;
-
   
   useEffect(() => {
     const getLocation = (location) => {
@@ -24,7 +24,12 @@ const Citydata = ({ cidade }) => {
           return response.json();
         })
         .then((data) => {
-          setLocation(data);
+          // console.log(data.map(d => {return {key: d.LocalizedName, ...d}}))
+          //pega o array de objetos na linha 0, e depois seta 
+          const lugar = data[0]
+          console.log(lugar.Key)
+          setLocationKey(lugar.Key)
+          setLocation(lugar);
           setError(null);
         })
         .catch((err) => {
@@ -44,7 +49,7 @@ const Citydata = ({ cidade }) => {
     <div>
         {/* {error && <p style={{ color: 'red' }}>{error}</p>} */}
         {location && (
-            <div>
+            <div style={{ backgroundColor: "blue" }}>
                 <h2 style={{ textAlign: "center" }}>User Profile Card</h2>
                 <div className="card">
                     {/* Substitua com dados reais da localização se necessário */}
