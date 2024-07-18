@@ -11,15 +11,24 @@ body {
     flex-direction:column;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Faz com que a div ocupe a altura total da tela */
+    height: 100vh; 
+    /* Faz com que a div ocupe a altura total da tela */
     text-align: center;
   }
   
+  .tituloCidade{
+    background-color: #01a4e5fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   form.example input[type=text] {
     padding: 10px;
     font-size: 17px;
-    border: 1px solid grey;
+    /* border: 1px solid grey; */
     float: left;
+    height: 100%;
     width: 80%;
     background: #f1f1f1;
   }
@@ -31,7 +40,7 @@ body {
     background: #2196F3;
     color: white;
     font-size: 17px;
-    border: 1px solid grey;
+    /* border: 1px solid grey; */
     border-left: none;
     cursor: pointer;
   }
@@ -44,4 +53,9 @@ body {
     content: "";
     clear: both;
     display: table;
+  }
+
+  .cityData{
+    width: 100%;
+    /* height: 1000px; */
   }

@@ -13,19 +13,19 @@ const FindCity = () => {
 
   return (
     <div className="container">
-      <div>
+      <div className="findCity">
         <form
           className="example"
           onSubmit={handleSearch}
-          style={{ margin: "3px", maxWidth: "300px" }}
+          style={{ maxWidth: "300px" }}
         >
-          <input type="text" placeholder="Search..." name="search2" />
+          <input type="text" placeholder="Digite o nome da cidade" name="search2" />
           <button type="submit">
             <i className="fa fa-search"></i>
           </button>
         </form>
       </div>
-      <div>
+      <div className="cityData">
         <Citydata cidade={cidade} />
       </div>
     </div>
