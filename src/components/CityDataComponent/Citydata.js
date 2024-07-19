@@ -55,8 +55,7 @@ const Citydata = ({ cidade }) => {
         }
 
         const lugar = locationData[0];
-        console.log(lugar);
-        console.log(locationData);
+        
 
         if (lugar.Key) {
           setLocation(lugar);
@@ -70,12 +69,12 @@ const Citydata = ({ cidade }) => {
             );
           }
           const weather = await weatherResponse.json();
-          console.log(weather[0]);
+          
           setWeatherData({ ...weather[0], name: lugar.LocalizedName });
         } else {
           setError("Localização Inválida");
         }
-        console.log(locationKey);
+        
       } catch (err) {
         console.error("Erro:", err);
         setError(err.message);
